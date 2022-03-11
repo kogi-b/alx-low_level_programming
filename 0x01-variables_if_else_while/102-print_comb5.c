@@ -1,51 +1,41 @@
-#include <stdio.h>
-/* more headers goes there */
-/* betty style doc for function main goes there */
+#include<stdio.h>
+
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * main - Entry Point
+ * Description: Write a program that prints all possible
+ * different combinations of two digits
+ * Return: 0
  */
+
 int main(void)
 {
-	int p = 48, q = 48, y = 48, x = 49;
+	int firstDigit = 0, seconDigit;
 
-	while (p < 58)
+	while (firstDigit <= 99)
 	{
-		while (q < 58)
+		seconDigit = firstDigit;
+		while (seconDigit <= 99)
 		{
-			while (y < 58)
+			if (seconDigit != firstDigit)
 			{
-				while (x < 58)
+				putchar((firstDigit / 10) + 48);
+				putchar((firstDigit % 10) + 48);
+				putchar(' ');
+				putchar((seconDigit / 10) + 48);
+				putchar((seconDigit % 10) + 48);
+
+				if (firstDigit != 98 || seconDigit != 99)
 				{
-					putchar(p);
-					putchar(q);
+					putchar(',');
 					putchar(' ');
-					putchar(y);
-					putchar(x);
-					if (!(p == 57 &&
-						q == 56 &&
-						y == 57 &&
-						x == 57))
-					{
-						putchar(',');
-						putchar(' ');
-					}
-					x++;
 				}
-				y++;
-				x = 48;
 			}
-			q++;
-			q = p;
-			x = q + 1;
+			++seconDigit;
 		}
-		p++;
-		q = 48;
-		y = p;
-		x = q+ 1;
+		++firstDigit;
 	}
 	putchar('\n');
+
 	return (0);
 }
 
