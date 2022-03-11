@@ -15,4 +15,3 @@ printf("%d", r);
 printf("\n");
 return (0);
 }
-
