@@ -1,19 +1,20 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
- * main - check the code for ALX School students.
- *
- * Return: Always 0.
-*/
+ * *_strcpy - copy strg to another string
+ * @dest: pointer
+ * @src: poiter
+ * Return: numbers dest
+ */
 
-int main(void)
+char *_strcpy(char *dest, char *src)
 {
-	char s1[98];
-	char *ptr;
+	int i;
 
-	ptr = _strcpy(s1, "First, solve the problem. Then, write the code\n");
-	printf("%s", s1);
-	printf("%s", ptr);
-	return (0);
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+	}
+	dest[i] = '\0';
+	return (dest);
 }
